@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .my-align {
+    @apply mx-auto max-w-6xl px-4 sm:px-8;
+  }
+  .tab-active {
+    @apply rounded-3xl;
+  }
+  .clicked {
+    background-color: #222;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  .primaryBtn {
+    background: rgb(27, 210, 174);
+    background: linear-gradient(
+      90deg,
+      rgba(27, 210, 174, 1) 0%,
+      rgba(12, 224, 174, 1) 32%,
+      rgba(2, 181, 226, 1) 100%
+    );
+    cursor: pointer;
+  }
+  .primaryBtn:hover {
+    color: black;
+  }
+  .bg-gold {
+    background: rgba(253, 191, 45, 1);
+  }
+}
