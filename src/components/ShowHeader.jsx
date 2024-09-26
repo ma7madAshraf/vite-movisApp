@@ -187,7 +187,7 @@ const ShowHeader = ({
                   href="#"
                   onClick={() => {
                     window.open(
-                      `/play/${trailer.key}`,
+                      `https://mov-movies.netlify.app/play/${trailer.key}`,
                       "myWindow",
                       "menubar=1,resizable=1,width=800,height=450"
                     );
@@ -223,7 +223,7 @@ const ShowHeader = ({
                 </div>
               );
             })}
-            <ExternalLinks {...externalIDs} />
+            <ExternalLinks {...externalIDs} type={type} />
           </div>
         </div>
       </div>

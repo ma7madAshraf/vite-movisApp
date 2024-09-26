@@ -17,7 +17,7 @@ const SingleMovie = ({ mainData }) => {
     reviewsData,
     imagesData,
     videosData,
-    recommendationsData,
+    recommendationsData,  
     keywords,
   } = movieData;
   const trailer = videosData?.find((e) => e.type === "Trailer");

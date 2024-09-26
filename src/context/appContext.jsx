@@ -34,14 +34,14 @@ const initialState = {
 const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  
+
   //theme
   const toggleTheme = () => {
     const newTheme = state.theme === "" ? "corporate" : "";
     dispatch({ type: "THEME", payload: newTheme });
     document.documentElement.setAttribute("data-theme", newTheme);
   };
-  
+
   //list
   const loadList = async ({ type, list }) => {
     const resp = await customFetch(`${type}/${list}?language=en-US&page=1`);
@@ -53,7 +53,7 @@ const AppProvider = ({ children }) => {
       },
     });
   };
-  
+
   const updateList = async ({ type, list, activePage }) => {
     const resp = await customFetch(
       `${type}/${list}?language=en-US&page=${activePage + 1}`
@@ -67,7 +67,6 @@ const AppProvider = ({ children }) => {
   };
   //search
   const setSearch = async (value, type = "multi", page = 1) => {
-
     dispatch({ type: "SET_SEARCH", payload: { value, type, page } });
     const resp = await customFetch(
       `/search/${
@@ -87,14 +86,13 @@ const AppProvider = ({ children }) => {
         "content-type": "application/json",
         Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN} `,
       },
-      data: { redirect_to: "http://localhost:5173/approved" },
+      data: { redirect_to: "https://mov-movies.netlify.app/approved" },
     };
     try {
       const response = await axios(options);
       dispatch({ type: "SET_TOKEN", payload: response.data.request_token });
       localStorage.setItem("moviesApp-token", response.data.request_token);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const getUser = async (id, token) => {
@@ -154,8 +152,7 @@ const AppProvider = ({ children }) => {
       }
 
       dispatch({ type: "SET_FAVORITES_MOVIES", payload: favoritesMovies });
-    } catch (error) {
-    }
+    } catch (error) {}
     try {
       const resp = await customFetch(
         `/account/${state.user.id}/favorite/tv?language=en-US&page=1`
@@ -171,8 +168,7 @@ const AppProvider = ({ children }) => {
       }
 
       dispatch({ type: "SET_FAVORITES_SHOWS", payload: favoritesShows });
-    } catch (error) {
-    }
+    } catch (error) {}
   };
   const getAllUserWatchlist = async () => {
     const watchlistMovies = [];
@@ -192,8 +188,7 @@ const AppProvider = ({ children }) => {
       }
 
       dispatch({ type: "SET_WATCHLIST_MOVIES", payload: watchlistMovies });
-    } catch (error) {
-    }
+    } catch (error) {}
 
     try {
       const resp = await customFetch(
@@ -210,8 +205,7 @@ const AppProvider = ({ children }) => {
       }
 
       dispatch({ type: "SET_WATCHLIST_SHOWS", payload: watchlistShows });
-    } catch (error) {
-    }
+    } catch (error) {}
   };
   const getAllUserRated = async () => {
     const ratedMovies = [];
@@ -230,8 +224,7 @@ const AppProvider = ({ children }) => {
         }
       }
       dispatch({ type: "SET_RATED_MOVIES", payload: ratedMovies });
-    } catch (error) {
-    }
+    } catch (error) {}
     try {
       const resp = await customFetch(
         `/account/${state.user.id}/rated/tv?language=en-US&page=1`
@@ -247,8 +240,7 @@ const AppProvider = ({ children }) => {
       }
 
       dispatch({ type: "SET_RATED_SHOWS", payload: ratedShows });
-    } catch (error) {
-    }
+    } catch (error) {}
   };
   const getAll = () => {
     getAllUserFavorite();
@@ -408,5 +400,3 @@ const AppProvider = ({ children }) => {
 
 export const useAppProvider = () => useContext(AppContext);
 export default AppProvider;
-
-

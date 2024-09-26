@@ -10,7 +10,7 @@ const VideosContainer = ({ data }) => {
               className="absolute text-6xl cursor-pointer hover:text-secondary-content top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               onClick={() => {
                 window.open(
-                  `/play/${item.key}`,
+                  `https://mov-movies.netlify.app/play/${item.key}`,
                   "myWindow",
                   "menubar=1,resizable=1,width=800,height=450"
                 );
