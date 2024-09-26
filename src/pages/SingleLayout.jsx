@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLoaderData, useParams } from "react-router-dom";
-import {
-  tvData,
-  tvCast,
-  tvReviews,
-  tvVideos,
-  tvImages,
-  tvRecommendations,
-} from "../utils/data";
 import { customFetch } from "../utils";
 import { useAppProvider } from "../context/appContext";
+
 const SingleQuery = (id, type) => {
   return {
     queryKey: ["SingleLayout", id],
