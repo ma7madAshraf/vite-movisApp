@@ -187,7 +187,7 @@ const ShowHeader = ({
                   href="#"
                   onClick={() => {
                     window.open(
-                      `https://mov-movies.netlify.app/play/${trailer.key}`,
+                      `/play/${trailer.key}`,
                       "myWindow",
                       "menubar=1,resizable=1,width=800,height=450"
                     );
