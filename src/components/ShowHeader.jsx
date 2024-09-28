@@ -195,7 +195,7 @@ const ShowHeader = ({
                   play trailer
                 </button>
                 <dialog id={`my_modal_${trailer?.id}`} className="modal ">
-                  <div className="modal-box p-0 w-[400px] h-[225px]  sm:w-[800px] sm:h-[450px] flex justify-center items-center">
+                  <div className="modal-box p-0 w-11/12 max-w-5xl aspect-video flex justify-center items-center">
                     <iframe
                       id="vid"
                       className="w-full h-full"
