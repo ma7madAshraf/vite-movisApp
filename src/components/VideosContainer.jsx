@@ -17,14 +17,12 @@ const VideosContainer = ({ data }) => {
                 <iframe
                   id="vid"
                   className="w-full h-full"
-                  a
                   src={`https://www.youtube.com/embed/${item?.key}`}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  aut
                 ></iframe>
               </div>
               <form method="dialog" className="modal-backdrop">
