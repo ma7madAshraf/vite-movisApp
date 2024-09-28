@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAppProvider } from "../context/appContext";
 import axios from "axios";
 import { IoShieldCheckmark } from "react-icons/io5";
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export const loader = async () => {
   const token = localStorage.getItem("moviesApp-token");

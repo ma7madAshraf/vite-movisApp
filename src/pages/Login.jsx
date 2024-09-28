@@ -16,7 +16,7 @@ const Login = () => {
       <div className="h-[40vh] flex justify-center items-center">
         {" "}
         <a
-          href={`https://www.themoviedb.org/auth/access?request_token=${token}
+          href={`https://www.themoviedb.org/auth/access?request_token=${token} 
 
 `}
           className={`btn primaryBtn text-2xl capitalize px-8 py-3 h-auto ${

@@ -26,20 +26,23 @@ const CastCard = ({
         >
           {name}
         </Link>
-        <p className=" text-sm text-wrap mb-0">
-          {character ||
-            roles
-              .slice(0, 3)
-              .map((role, ind) =>
-                ind !== 0 ? ` / ${role.character}` : role.character
+        {character ||
+          (roles && (
+            <p className=" text-sm text-wrap mb-0">
+              {character ||
+                roles
+                  .slice(0, 3)
+                  .map((role, ind) =>
+                    ind !== 0 ? ` / ${role.character}` : role.character
+                  )}
+              {total_episode_count && (
+                <span className="block text-neutral-content font-light text-xs mt-0">
+                  {total_episode_count}{" "}
+                  {total_episode_count > 1 ? "Episodes" : "Episode"}{" "}
+                </span>
               )}
-          {total_episode_count && (
-            <span className="block text-neutral-content font-light text-xs mt-0">
-              {total_episode_count}{" "}
-              {total_episode_count > 1 ? "Episodes" : "Episode"}{" "}
-            </span>
-          )}
-        </p>
+            </p>
+          ))}
       </div>
     </div>
   );

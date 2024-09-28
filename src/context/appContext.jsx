@@ -86,7 +86,7 @@ const AppProvider = ({ children }) => {
         "content-type": "application/json",
         Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN} `,
       },
-      data: { redirect_to: "https://mov-movies.netlify.app/approved" },
+      data: { redirect_to: "https://mov-movies.netlify.app//approved" },
     };
     try {
       const response = await axios(options);

@@ -43,6 +43,8 @@ const ShowHeader = ({
     type === "movie" ? "watchlistMovies" : "watchlistTv"
   ]?.find((e) => e.id === id);
   const { externalIDs } = movieData;
+  console.log(trailer);
+
   return (
     <article
       className="hero min-h-[60vh]  max-w-screen"
@@ -182,19 +184,34 @@ const ShowHeader = ({
                     </p>
                   </div>
                 )}
-                <a
+                <button
                   className="font-bold tracking-wide"
-                  href="#"
-                  onClick={() => {
-                    window.open(
-                      `/play/${trailer.key}`,
-                      "myWindow",
-                      "menubar=1,resizable=1,width=800,height=450"
-                    );
-                  }}
+                  onClick={() =>
+                    document
+                      .getElementById(`my_modal_${trailer?.id}`)
+                      .showModal()
+                  }
                 >
-                  Play Trailer
-                </a>
+                  play trailer
+                </button>
+                <dialog id={`my_modal_${trailer?.id}`} className="modal ">
+                  <div className="modal-box p-0 w-[400px] h-[225px]  sm:w-[800px] sm:h-[450px] flex justify-center items-center">
+                    <iframe
+                      id="vid"
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${trailer?.key}`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      aut
+                    ></iframe>
+                  </div>
+                  <form method="dialog" className="modal-backdrop">
+                    <button>close</button>
+                  </form>
+                </dialog>
               </div>
             </div>{" "}
             <img

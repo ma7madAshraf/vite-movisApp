@@ -33,7 +33,7 @@ const ExternalLinks = ({
       {imdb_id && (
         <a
           href={`https://www.imdb.com/${
-            type === "" ? "title" : type
+            type === "" ? "title" : "title"
           }/${imdb_id}`}
           target="_blank"
         >
