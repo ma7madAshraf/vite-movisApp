@@ -67,7 +67,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link className="hidden  sm:inline-flex btn btn-secondary text-xl text-slate-800 font-bold ">
-            MoviesApp
+            Mo Movies
           </Link>
         </div>
         <div className=" hidden lg:flex">
@@ -118,6 +118,9 @@ const Navbar = () => {
             </div>
           </ul>
         </div>
+        <Link className="  sm:hidden btn btn-secondary text-lg text-slate-800 font-bold ">
+          Mo Movies
+        </Link>
         <div className="">
           {/* <ThemeController /> */}
           {user && (
@@ -172,7 +175,7 @@ const Navbar = () => {
             </div>
           )}
           {!user && (
-            <Link to="/login" className="btn ml-2 ">
+            <Link to="/login" className="btn ml-2 font-semibold  ">
               Login <TbLogin2 className="text-lg" />
             </Link>
           )}

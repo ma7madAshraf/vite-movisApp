@@ -9,7 +9,7 @@ const Keywords = ({ list, type }) => {
           to={`/keyword/${type}/${key.id}`}
           state={{ keyword: key.name }}
           key={key.id}
-          className="capitalize text-base btn mx-2 "
+          className="capitalize text-sm sm:text-base btn mx-2 "
         >
           {key.name}
         </Link>
