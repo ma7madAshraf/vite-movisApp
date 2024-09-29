@@ -18,7 +18,7 @@ const TrendingList = () => {
   }, [list]);
   return (
     <section className="p-8 py-10">
-      <div className="flex ">
+      <div className="flex gap-y-4 flex-col sm:flex-row">
         <h4 className="w-fit text-xl font-semibold mr-8 "> Trending</h4>
         <SwitchList
           list={["today", "this week"]}

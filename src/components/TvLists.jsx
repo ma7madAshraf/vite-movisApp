@@ -21,7 +21,7 @@ const TvLists = () => {
 
   return (
     <section className="p-8 py-10">
-      <div className="flex ">
+      <div className="flex  gap-y-4 flex-col sm:flex-row ">
         <h4 className="w-fit text-xl font-semibold mr-8 "> Tv Series</h4>
         <SwitchList
           list={["airing today", "on the air", "popular", "top rated"]}
@@ -29,7 +29,7 @@ const TvLists = () => {
           onChange={setList}
         />
       </div>
-      <div className="flex gap-6 overflow-x-scroll mt-6">
+      <div className="flex gap-6 overflow-x-scroll mt-6 ">
         {theList.map((ele) => {
           return <MovieCard key={ele.id} {...ele} type="tv" />;
         })}
@@ -39,4 +39,3 @@ const TvLists = () => {
 };
 
 export default TvLists;
-

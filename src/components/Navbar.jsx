@@ -6,8 +6,8 @@ import { useAppProvider } from "../context/appContext";
 const Navbar = () => {
   const { user, handleLogout } = useAppProvider();
   return (
-    <div className="navbar bg-base-300">
-      <div className="my-align w-full flex justify-between ">
+    <div className="navbar px-0 bg-base-300">
+      <div className="px-4 sm:px-8 w-full flex justify-between ">
         <div className="">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
