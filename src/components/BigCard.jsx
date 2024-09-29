@@ -17,8 +17,8 @@ const BigCard = ({
   searchType,
 }) => {
   return (
-    <div className="card bg-base-300 w-44 shadow-xl h-full">
-      <figure className="h-fit min-h-64 w-44 bg-white">
+    <div className="card bg-base-300 w-36 sm:w-44 shadow-xl h-full">
+      <figure className="h-fit min-h-52 sm:min-h-64 w-36 sm:w-44 bg-white">
         <Link to={`/${type || media_type || searchType || "person"}/${id}`}>
           <img
             src={
@@ -41,11 +41,11 @@ const BigCard = ({
         )}
         <Link
           to={`/${type || media_type || "person"}/${id}`}
-          className="font-semibold cursor-pointer hover:text-neutral-content"
+          className=" font-bold sm:font-semibold cursor-pointer hover:text-neutral-content text-sm sm:text-base"
         >
           {title || name}
         </Link>
-        <p className="text-sm text-neutral-content">
+        <p className="text-xs sm:text-sm text-neutral-content">
           {moment(release_date).format("ll")}
         </p>
       </div>

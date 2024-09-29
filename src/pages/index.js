@@ -4,7 +4,6 @@ import Search from "./Search";
 import SingleMovie from "./SingleMovie";
 import Reviews from "./Reviews";
 import SingleLayout from "./SingleLayout";
-import Play from "./Play";
 import FullCast from "./FullCast";
 import Person from "./Person";
 import SingleTv from "./SingleTv";
@@ -24,7 +23,6 @@ export {
   SingleMovie,
   Reviews,
   SingleLayout,
-  Play,
   FullCast,
   Person,
   SingleTv,

@@ -28,7 +28,7 @@ const MovieCard = ({
         <div className="absolute  -translate-y-1/2">
           <RateSpan rate={rate} size="2rem" text="text-xs" />
         </div>
-      </div>
+      </div>  
       <div className="mt-4 text-sm">
         <Link
           to={`/${type || media_type}/${id}`}

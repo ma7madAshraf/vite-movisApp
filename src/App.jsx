@@ -5,7 +5,6 @@ import {
   Search,
   Reviews,
   SingleLayout,
-  Play,
   FullCast,
   Person,
   TvSeasons,
@@ -76,7 +75,6 @@ function App() {
         },
       ],
     },
-    { path: "/play/:id", element: <Play /> },
   ]);
 
   return (

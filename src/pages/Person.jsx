@@ -48,18 +48,24 @@ const Person = () => {
     profile_path,
   } = personData;
   const [type, setType] = useState("all");
+  const [shorten, setShorten] = useState(true);
   return (
     <main className="my-align">
       <div className=" grid grid-cols-7">
-        <div className="side col-span-2">
+        <div className="side col-span-2 text-sm sm:text-base">
           <img
             src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${profile_path}`}
             alt={name}
             className="rounded-xl"
           />
+          {externalIDs && (
+            <div className="mt-4">
+              <ExternalLinks {...externalIDs} type="name" />
+            </div>
+          )}
           <div className="mt-4">
-            <h5 className="font-semibold text-md capitalize">Known for</h5>
-            <p className="text-md text-neutral-content">
+            <h5 className="font-semibold text-md capitalize ">Known for</h5>
+            <p className="text-md text-neutral-content text-sm sm:text-base">
               {known_for_department}
             </p>
           </div>
@@ -111,26 +117,28 @@ const Person = () => {
               </p>
             </div>
           )}
-          {externalIDs && (
-            <div className="mt-2">
-              <ExternalLinks {...externalIDs} type="name" />
-            </div>
-          )}
         </div>
         {/* main */}
         <div className="main px-4 col-span-5">
           <h2 className="text-4xl font-bold">{name}</h2>
           <div className="mt-2">
             <h5 className="font-semibold text-xl capitalize mb-2">Biography</h5>
-            <p className="text-xs sm:text-sm md:text-base lg:leading-7 text-neutral-content">
-              {biography}
+            <p
+              className="text-xs sm:text-sm md:text-base lg:leading-7 text-neutral-content cursor-pointer"
+              onClick={() => setShorten(!shorten)}
+            >
+              {shorten
+                ? ` ${biography.substring(0, 600)}...See More`
+                : biography}
             </p>
           </div>
         </div>
       </div>
       <div className="w-full ">
         <div className="flex items-center justify-between mb-4">
-          <h5 className="font-semibold text-xl capitalize w-fit">known for</h5>
+          <h5 className="font-semibold text-lg sm:text-xl capitalize w-fit">
+            Filmography
+          </h5>
           <select
             className="select w-fit font-semibold"
             onChange={(e) => {
