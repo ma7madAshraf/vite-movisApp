@@ -3,11 +3,7 @@ import sectionBg from "../assets/searchSectionBg.webp";
 import RadioInput from "./RadioInput";
 import { useAppProvider } from "../context/appContext";
 const SearchHeader = () => {
-  const {
-    setSearch,
-    searchTerm,
-    searchType: val,
-  } = useAppProvider();
+  const { setSearch, searchTerm, searchType: val } = useAppProvider();
   const [searchValue, setSearchValue] = useState(searchTerm || "");
   const [searchType, setSearchType] = useState(
     val === "multi" ? "all" : val || "all"
@@ -15,6 +11,11 @@ const SearchHeader = () => {
   const handleSearch = () => {
     if (searchValue === "") return;
     setSearch(searchValue, searchType);
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -28,6 +29,7 @@ const SearchHeader = () => {
       <label className="input input-bordered w-5/6 rounded-3xl flex items-center justify-between gap-2 pr-0">
         <input
           type="text"
+          onKeyDown={handleKeyDown}
           className="grow"
           placeholder="Search for a movie, tv show, person...."
           value={searchValue}

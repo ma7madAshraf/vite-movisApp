@@ -8,8 +8,14 @@ const SearchSection = () => {
   const navigate = useNavigate();
   const { setSearch } = useAppProvider();
   const handleSearch = () => {
+    if (searchValue === "") return;
     setSearch(searchValue, "all", 1);
     navigate("/search");
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
   return (
     <div
@@ -29,6 +35,7 @@ const SearchSection = () => {
       <label className="input input-bordered w-5/6 rounded-3xl flex items-center justify-between gap-2 pr-0">
         <input
           type="text"
+          onKeyDown={handleKeyDown}
           className="grow"
           placeholder="Search for a movie, tv show, person...."
           value={searchValue}

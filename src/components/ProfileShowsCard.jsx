@@ -37,7 +37,7 @@ const ProfileShowsCard = ({
       <img
         src={`https://media.themoviedb.org/t/p/w220_and_h330_face/${poster}`}
         alt=""
-        className="w-32 h-52 "
+        className=" w-24 sm:w-32 sm:h-52 "
         to={`/${subtype.toLowerCase().replace("s", "")}/${id}`}
       />
       <div className="flex flex-col justify-around sm:justify-between py-2 ml-4 pr-2">
@@ -55,10 +55,10 @@ const ProfileShowsCard = ({
           <div className="hidden sm:inline-block">
             <RateSpan rate={vote_average} size="3rem" text="text-sm" />
           </div>
-          <div className="sm:hidden flex justify-start items-center gap-x-1">
+          {/* <div className="sm:hidden flex justify-start items-center gap-x-1">
             <RateSpan rate={vote_average} size="2rem" text="text-sm" />
             <h5>Users Rate</h5>
-          </div>
+          </div> */}
         </div>
         <p className="text-xs  md:text-sm hidden sm:inline-block">
           {overview.length > 200

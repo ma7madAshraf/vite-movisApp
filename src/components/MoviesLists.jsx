@@ -18,8 +18,8 @@ const MoviesLists = () => {
   }, [list]);
 
   return (
-    <section className="px-8 py-10 bg-base-300 ">
-      <div className="flex  gap-y-4 flex-col sm:flex-row">
+    <section className="px-1 sm:px-8 py-10 bg-base-300   ">
+      <div className="flex  gap-y-4 flex-col sm:flex-row  pl-4 sm:pl-0">
         <h4 className="w-fit text-xl font-semibold mr-8 "> Movies</h4>
         <SwitchList
           list={["now playing", "popular", "upcoming", "top rated"]}

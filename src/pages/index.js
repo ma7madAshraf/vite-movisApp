@@ -15,6 +15,7 @@ import Login from "./Login";
 import Login2 from "./Login2";
 import Profile from "./Profile";
 import Keyword from "./Keyword";
+import ErrorPage from "./ErrorPage";
 
 export {
   HomeLayout,
@@ -34,4 +35,5 @@ export {
   Login,
   Login2,
   Keyword,
+  ErrorPage,
 };

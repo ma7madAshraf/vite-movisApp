@@ -15,6 +15,7 @@ import {
   Login2,
   Profile,
   Keyword,
+  ErrorPage,
 } from "./pages";
 import { loader as SingleLoader } from "./pages/SingleLayout";
 import { loader as seasonLoader } from "./pages/TvSeason";
@@ -28,11 +29,12 @@ function App() {
   const queryClient = new QueryClient({
     defaultOptions: { queries: { staleTime: 5 * 60 * 1000 } },
   });
-  
+
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomeLayout />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
