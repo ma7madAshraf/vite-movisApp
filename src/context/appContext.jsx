@@ -130,7 +130,11 @@ const AppProvider = ({ children }) => {
       localStorage.removeItem("moviesAppUserLists");
       toast.success(`logged out`);
     } catch (error) {
-      toast.error(`something went wrong, try again later`);
+      dispatch({ type: "LOGOUT" });
+      localStorage.removeItem("moviesApp-token");
+      localStorage.removeItem("moviesAppUser");
+      localStorage.removeItem("moviesAppUserLists");
+      toast.success(`logged out`);
     }
   };
 
